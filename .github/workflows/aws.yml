@@ -29,12 +29,12 @@ on:
     branches:
       - master
 
-name: Deploy to Amazon S3
+name: Deploy to AWS S3
 
 jobs:
   build:
     name: Build React App
-    runs-on: [ubuntu-latest]
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout master
         uses: actions/checkout@master
@@ -51,7 +51,7 @@ jobs:
 
   deploy:
     needs: [build]
-    name: Deploy
+    name: Deploy to S3
     runs-on: ubuntu-latest
 
     steps:
@@ -63,6 +63,7 @@ jobs:
         aws-region: us-west-2
 
     - name: Upload to S3
+      # check if the bucket exist, and then sync (delete removed files)
       run: |
         aws s3 ls s3://chrisro_demo_app &>/dev/null
         aws s3 sync build s3://chrisro_demo_app --no-progress --delete
