@@ -65,5 +65,5 @@ jobs:
     - name: Upload to S3
       # check if the bucket exist, and then sync (delete removed files)
       run: |
-        aws s3 ls s3://chrisro_demo_app &>/dev/null
-        aws s3 sync build s3://chrisro_demo_app --no-progress --delete
+        aws s3 ls s3://chrisro-demo-app &>/dev/null
+        aws s3 sync build s3://chrisro-demo-app --no-progress --delete
