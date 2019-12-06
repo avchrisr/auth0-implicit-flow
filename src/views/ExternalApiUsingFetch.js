@@ -16,8 +16,9 @@ const ExternalApi = () => {
             // ***  either specify proxy in package.json, or specify FULL URL
             // "proxy": "http://localhost:3001"
 
+            const response = await fetch("https://www.chrisro.tech/api/external", {
             // const response = await fetch("http://localhost:3001/api/external", {
-            const response = await fetch("/api/external", {
+            // const response = await fetch("/api/external", {
                 headers: {
                     Authorization: `Bearer ${token.__raw}`
                 }

@@ -22,7 +22,8 @@ const NavBar = () => {
         // const url = `http://${REACT_APP_NGINX_HOSTNAME}:${REACT_APP_NGINX_PORT}/api/${REACT_APP_API_VERSION}/users/${userId}`;
 
         // const url = `http://localhost:3001/public`;
-        const url = `http://localhost:3001/api/v1/users`;
+        // const url = `http://localhost:3001/api/v1/users`;
+        const url = `https://www.chrisro.tech/api/v1/users`;
 
         const options = {
             url,
